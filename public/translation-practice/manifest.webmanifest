@@ -1,0 +1,12 @@
+{
+  "name": "Translation Practice — English to German",
+  "short_name": "Practice DE",
+  "start_url": "/translation-practice/",
+  "scope": "/translation-practice/",
+  "display": "standalone",
+  "background_color": "#0b0f14",
+  "theme_color": "#31c48d",
+  "icons": [
+    { "src": "/translation-practice/favicon.ico", "sizes": "48x48 64x64 128x128", "type": "image/x-icon" }
+  ]
+}
