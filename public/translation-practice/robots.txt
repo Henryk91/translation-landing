@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /admin
-Sitemap: https://henryk.co.za/translation-practice/sitemap.xml
+Sitemap: https://translation-practice.henryk.co.za/translation-practice/sitemap.xml
