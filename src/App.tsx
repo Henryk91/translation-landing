@@ -7,10 +7,17 @@ import Topics from "./components/Topics";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import { logUse } from "./utils";
 
 export default function App() {
   // Inject FAQ JSON-LD for rich results
   useEffect(() => {
+
+    const hasLoggedUse = sessionStorage.getItem("hasLoggedUse");
+    if (!hasLoggedUse) {
+      sessionStorage.setItem("hasLoggedUse", "true");
+      logUse();
+    }
     const el = document.getElementById("faq-json");
     if (!el) return;
     el.textContent = JSON.stringify({
