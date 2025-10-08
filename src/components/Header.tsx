@@ -3,7 +3,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 backdrop-blur bg-brand-bg/80 border-b border-white/5">
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="https://henryk.co.za/translation-practice/logo192.png" alt="Henryk Logo" className="h-7 w-7" />
+          <img src="https://translation-practice.henryk.co.za/translation-practice/logo192.png" alt="Henryk Logo" className="h-7 w-7" />
           <span className="text-sm text-brand-fg">Translation Practice</span>
         </div>
         <nav className="hidden sm:flex gap-6 text-sm text-brand-fg">

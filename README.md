@@ -70,7 +70,7 @@ translation-landing/
 │  ├─ translation-practice/
 │  │   ├─ hero-preview.png
 │  │   ├─ og-image.png
-│  │   ├─ logo.svg
+│  │   ├─ logo192.png
 │  │   ├─ favicon.ico
 │  │   ├─ robots.txt
 │  │   └─ sitemap.xml
