@@ -13,11 +13,7 @@ export default function App() {
   // Inject FAQ JSON-LD for rich results
   useEffect(() => {
 
-    const hasLoggedUse = sessionStorage.getItem("hasLoggedUse");
-    if (!hasLoggedUse) {
-      sessionStorage.setItem("hasLoggedUse", "true");
-      logUse();
-    }
+    logUse();
     const el = document.getElementById("faq-json");
     if (!el) return;
     el.textContent = JSON.stringify({
