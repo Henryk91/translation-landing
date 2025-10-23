@@ -4,7 +4,7 @@ export function logUse(): void {
   if (currentURL.includes("localhost") || hasLoggedUse) return;
   sessionStorage.setItem("hasLoggedUse", "true");
 
-  fetch("https://note.henryk.co.za/api/log?site=translation-landing")
+  fetch("https://note.henryk.co.za/api/log?site=lingodrill-landing")
     .then((res: Response) => res.json())
     .then((data) => {
       console.log(data);
