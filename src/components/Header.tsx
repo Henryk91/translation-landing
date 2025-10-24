@@ -13,7 +13,7 @@ export default function Header() {
           <a href="#faq" className="hover:text-brand-text">FAQ</a>
         </nav>
         <a
-          href="https://henryk.co.za/translation-practice/"
+          href="https://practice.lingodrill.com/"
           className="rounded-xl bg-brand-accent/90 hover:bg-brand-accent text-[#0b0f14] font-semibold px-4 py-2 text-sm"
         >
           Start practicing

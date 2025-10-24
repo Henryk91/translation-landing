@@ -18,7 +18,7 @@ export default function FAQ() {
         </dl>
         <div className="mt-8">
           <a
-            href="https://henryk.co.za/translation-practice/"
+            href="https://practice.lingodrill.com/"
             className="rounded-2xl bg-brand-accent hover:bg-brand-accent/90 text-[#0b0f14] font-semibold px-6 py-3"
           >
             Start practicing now
