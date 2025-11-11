@@ -7,6 +7,7 @@ import Topics from "./components/Topics";
 import Testimonials from "./components/Testimonials";
 import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
+import FeedbackButton from "./components/FeedbackButton";
 import { logUse } from "./utils";
 
 export default function App() {
@@ -60,6 +61,7 @@ export default function App() {
         <FAQ />
       </main>
       <Footer />
+      <FeedbackButton />
     </>
   );
 }
