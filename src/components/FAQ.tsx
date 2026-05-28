@@ -1,4 +1,8 @@
+import { usePostHog } from "@posthog/react";
+
 export default function FAQ() {
+  const posthog = usePostHog();
+
   const faqs = [
     { q: "Is this free?", a: "Yes, practice is free. No account required." },
     { q: "Do I need to know German already?", a: "Not necessarily. Start at A1 and move up to C2." },
@@ -20,6 +24,7 @@ export default function FAQ() {
           <a
             href="https://practice.lingodrill.com/"
             className="rounded-2xl bg-brand-accent hover:bg-brand-accent/90 text-[#0b0f14] font-semibold px-6 py-3"
+            onClick={() => posthog?.capture("cta_clicked", { location: "faq" })}
           >
             Start practicing now
           </a>

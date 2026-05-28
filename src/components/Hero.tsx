@@ -1,4 +1,8 @@
+import { usePostHog } from "@posthog/react";
+
 export default function Hero() {
+  const posthog = usePostHog();
+
   return (
     <section className="relative overflow-hidden">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:py-24">
@@ -15,12 +19,14 @@ export default function Hero() {
               <a
                 href="https://practice.lingodrill.com/"
                 className="rounded-2xl bg-brand-accent hover:bg-brand-accent/90 text-[#0b0f14] font-semibold px-6 py-3"
+                onClick={() => posthog?.capture("cta_clicked", { location: "hero" })}
               >
                 Start practicing
               </a>
               <a
                 href="#features"
                 className="rounded-2xl border border-white/10 px-6 py-3 text-brand-fg hover:text-brand-text"
+                onClick={() => posthog?.capture("see_how_it_works_clicked")}
               >
                 See how it works
               </a>

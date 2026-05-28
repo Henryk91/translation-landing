@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { usePostHog } from "@posthog/react";
 
 export default function FeedbackButton() {
+  const posthog = usePostHog();
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,6 +26,7 @@ export default function FeedbackButton() {
       });
 
       if (res.ok) {
+        posthog?.capture("feedback_submitted");
         setSubmitStatus("success");
         setName("");
         setEmail("");
@@ -33,9 +36,11 @@ export default function FeedbackButton() {
           setSubmitStatus(null);
         }, 2000);
       } else {
+        posthog?.capture("feedback_failed");
         setSubmitStatus("error");
       }
     } catch (error) {
+      posthog?.capture("feedback_failed");
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
@@ -46,7 +51,7 @@ export default function FeedbackButton() {
     <>
       {/* Floating Button */}
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={() => { posthog?.capture("feedback_opened"); setIsOpen(true); }}
         className="fixed bottom-6 right-6 z-50 rounded-full bg-brand-accent hover:bg-brand-accent/90 text-[#0b0f14] font-semibold px-5 py-3 shadow-lg hover:shadow-xl transition-all duration-200 flex items-center gap-2"
         aria-label="Send feedback"
       >

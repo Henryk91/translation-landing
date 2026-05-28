@@ -1,4 +1,8 @@
+import { usePostHog } from "@posthog/react";
+
 export default function Header() {
+  const posthog = usePostHog();
+
   return (
     <header className="sticky top-0 z-40 backdrop-blur bg-brand-bg/80 border-b border-white/5">
       <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
@@ -15,6 +19,7 @@ export default function Header() {
         <a
           href="https://practice.lingodrill.com/"
           className="rounded-xl bg-brand-accent/90 hover:bg-brand-accent text-[#0b0f14] font-semibold px-4 py-2 text-sm"
+          onClick={() => posthog?.capture("cta_clicked", { location: "header" })}
         >
           Start practicing
         </a>

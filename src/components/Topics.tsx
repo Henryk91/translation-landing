@@ -1,4 +1,8 @@
+import { usePostHog } from "@posthog/react";
+
 export default function Topics() {
+  const posthog = usePostHog();
+
   const topics = [
     {title: "Definite/indefinite articles", path: "Artikeln"},
     {title: "Cases & prepositions (Akk/Dat/Gen)", path: "Deklination_Drills"},
@@ -19,7 +23,9 @@ export default function Topics() {
               <a
                 href={`https://practice.lingodrill.com/${t.path}`}
                 target="_blank"
-                className="text-sm text-brand-accent hover:underline"> Learn Now &rarr;</a>
+                className="text-sm text-brand-accent hover:underline"
+                onClick={() => posthog?.capture("topic_clicked", { topic: t.title, path: t.path })}
+              > Learn Now &rarr;</a>
             </li>
           ))}
         </ul>

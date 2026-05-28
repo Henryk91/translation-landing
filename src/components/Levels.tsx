@@ -1,4 +1,8 @@
+import { usePostHog } from "@posthog/react";
+
 export default function Levels() {
+  const posthog = usePostHog();
+
   const levels = [
     { level: "A1.1", path: "By_Level/a1.1" },
     { level: "A1.2", path: "By_Level/a1.2" },
@@ -28,6 +32,7 @@ export default function Levels() {
               className="rounded-xl border border-white/10 px-4 py-2 text-sm hover:bg-brand-accent transition"
               href={`https://practice.lingodrill.com/${l.path}`}
               target="_blank"
+              onClick={() => posthog?.capture("level_clicked", { level: l.level, path: l.path })}
             >
               {l.level}
             </a>
